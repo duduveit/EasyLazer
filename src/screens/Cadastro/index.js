@@ -54,11 +54,7 @@ export default function Cadastro({ navigation }) {
 
   const cadastrar = () => {
     if (validar()){
-      console.log("salvou")
       login()
-    }
-    else{
-      console.log("Erro")
     }
   }
 
@@ -70,7 +66,7 @@ export default function Cadastro({ navigation }) {
   }
 
   return (
-    <View style={styles.container}>
+    < View style={styles.container}>
       <Image style={styles.logoCadastro} source={logo} />
       <Text style ={{fontSize: 30, textAlign: 'center', margin: 10, fontWeight: 'bold'}}> Crie sua conta!</Text>
   
