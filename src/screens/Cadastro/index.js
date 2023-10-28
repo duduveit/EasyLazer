@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { View, Image } from 'react-native'; // Importe a tag Image corretamente
+import { View, Image, Alert} from 'react-native'; // Importe a tag Image corretamente
 import { Button, Icon, Input, Text, CheckBox } from 'react-native-elements';
 import styles from '../../../style/MainStyle';
 import logo from '../../../assets/icon.png'; // Importe a imagem corretamente
 import { LinearGradient } from 'expo-linear-gradient';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../firebase/firebase.config';
 
 export default function Cadastro({ navigation }) {
   const [name, setName] = useState(null);
@@ -63,6 +65,20 @@ export default function Cadastro({ navigation }) {
       index: 0,
       routes: [{ name: "Login" }]
     });
+  }
+
+  function newUser(){
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((UserCredential) => {
+        const user = UserCredential.user;
+        Alert.alert('O usuário ' + email + ' foi criado. Realize o Login');
+        login();
+      })
+      .catch((error) => {
+        const errorMessage = error.Message;
+        Alert.alert('Falha na criação de usuário', 'Preenche seus dados corretamente!')
+      })
+
   }
 
   return (
@@ -147,7 +163,7 @@ export default function Cadastro({ navigation }) {
           />
         }
         title="Cadastrar"
-        onPress={() => cadastrar()}
+        onPress={newUser}
       >
       </Button>
       </View>
