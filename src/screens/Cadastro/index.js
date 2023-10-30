@@ -11,18 +11,15 @@ export default function Cadastro({ navigation }) {
   const [name, setName] = useState(null);
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
-  const [cpf, setCpf] = useState(null);
   const [isSelect,setSelect] = useState(false);
   const [errorEmail, setErrorEmail] = useState(null);
   const [errorName, setErrorName] = useState(null);
-  const [errorCpf, setErrorCpf] = useState(null);
   const [errorPassword, setErrorPassword] = useState(null);
   const [errorSelect, setErrorSelect] = useState(null);
 
   const validar = () => {
     setErrorEmail(null);
     setErrorName(null);
-    setErrorCpf(null);
     setErrorPassword(null);
     setErrorSelect(null);
 
@@ -34,11 +31,6 @@ export default function Cadastro({ navigation }) {
     const re = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
     if (!re.test(String(email).toLowerCase())) {
       setErrorEmail("Preencha seu e-mail corretamente");
-      return false;
-    }
-  
-    if (!cpf || !/^\d{11}$/.test(cpf)) {
-      setErrorCpf("11 números são requeridos");
       return false;
     }
   
@@ -106,18 +98,6 @@ export default function Cadastro({ navigation }) {
         }
         keyboardType="email-address"
         errorMessage={errorEmail}
-      />
-      <Input
-        placeholder="CPF"
-        leftIcon={{ type: 'font-awesome', name: 'id-card', size: 13}}
-        onChangeText={value => {
-          setCpf(value)
-          setErrorCpf(null)
-          }
-        }
-        keyboardType="number-pad"
-        returnKeyType='done'
-        errorMessage={errorCpf}
       />
       <Input
         placeholder="Sua senha"
