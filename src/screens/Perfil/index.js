@@ -3,8 +3,8 @@ import { auth } from "../../firebase/firebase.config";
 import { LinearGradient } from 'expo-linear-gradient';
 import { Alert, View } from 'react-native';
 import { Button, Icon, Text, Avatar } from 'react-native-elements';
-import styles from '../../../style/MainStyle';
-import { signOut } from 'firebase/auth';
+import { signOut, updateProfile } from 'firebase/auth';
+import style  from '../Perfil/style'
 
 export default function Perfil( {navigation} ) {
   const usuario = auth.currentUser;
@@ -20,6 +20,10 @@ export default function Perfil( {navigation} ) {
     navigation.navigate('ReplacePassword');
   }
 
+  function ReplaceName() {
+    navigation.navigate('ReplaceName');
+  }
+  
   function logout() {
     signOut(auth)
       .then(() => {
@@ -27,8 +31,9 @@ export default function Perfil( {navigation} ) {
         login();
       })
   }
+
   return (
-    <View style={styles.container}>
+    <View style={style.container}>
       <Avatar
         size={200}
         title="Eduardo Veit Ferrão"
@@ -38,14 +43,17 @@ export default function Perfil( {navigation} ) {
         }}
       />
       <View>
-        <Text style={styles.input}>
-          usuario
+        <Text style={style.input}>
+          {usuario.displayName}
         </Text>
-        <Text style={styles.input}>
+        <Text style={{ left: 225 }} onPress={ReplaceName}>
+          Alterar nome
+        </Text>
+        <Text style={style.input}>
           {usuario.email}
         </Text>
-        <Text style={styles.input}>
-          senha
+        <Text style={style.input}>
+          *************
         </Text>
         <Text style={{ left: 225 }} onPress={ReplacePassword}>
           Alterar senha
@@ -55,11 +63,7 @@ export default function Perfil( {navigation} ) {
         <Button
           ViewComponent={LinearGradient}
           buttonStyle={{ borderRadius: 10, height: 56, width: 300}}
-          linearGradientProps={{
-            colors: ["#FF6A13", "#F1C400"],
-            start: { x: 0, y: 0.5 },
-            end: { x: 1, y: 0.5 },
-          }}
+          linearGradientProps={style.gradiente}
           title="Cadastrar evento"
         />
       </View>      

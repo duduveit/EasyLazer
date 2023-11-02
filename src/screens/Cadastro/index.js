@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { View, Image, Alert} from 'react-native'; // Importe a tag Image corretamente
 import { Button, Icon, Input, Text, CheckBox } from 'react-native-elements';
-import styles from '../../../style/MainStyle';
+import style from '../Cadastro/style';
 import logo from '../../../assets/icon.png'; // Importe a imagem corretamente
 import { LinearGradient } from 'expo-linear-gradient';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../firebase/firebase.config';
 
 export default function Cadastro({ navigation }) {
+  
   const [name, setName] = useState(null);
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
@@ -63,6 +64,8 @@ export default function Cadastro({ navigation }) {
     createUserWithEmailAndPassword(auth, email, password)
       .then((UserCredential) => {
         const user = UserCredential.user;
+        console.log(user)
+        console.log(UserCredential)
         Alert.alert('O usuário ' + email + ' foi criado. Realize o Login');
         login();
       })
@@ -74,9 +77,9 @@ export default function Cadastro({ navigation }) {
   }
 
   return (
-    < View style={styles.container}>
-      <Image style={styles.logoCadastro} source={logo} />
-      <Text style ={{fontSize: 30, textAlign: 'center', margin: 10, fontWeight: 'bold'}}> Crie sua conta!</Text>
+    < View style={style.container}>
+      <Image style={style.logoCadastro} source={logo} />
+      <Text style ={style.criarConta}> Crie sua conta!</Text>
   
       <Input
         placeholder="Nome"
@@ -147,8 +150,8 @@ export default function Cadastro({ navigation }) {
       >
       </Button>
       </View>
-      <Text style ={{fontSize: 16, textAlign: 'center', marginTop: 40, color: '#8B8688'}}> Já possui conta? 
-        <Text style = {{fontSize: 16, textAlign: 'center', marginTop: 40, color: '#FF6A13'}} onPress={() => login()}> Entre com sua conta </Text>
+      <Text style ={style.textoPossui}> Já possui conta? 
+        <Text style = {style.textoCadastro} onPress={() => login()}> Entre com sua conta </Text>
       </Text>
     </View>
   );

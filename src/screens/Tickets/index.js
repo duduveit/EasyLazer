@@ -1,25 +1,13 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View} from 'react-native';
+import styles from '../../../style/MainStyle';
 
-export default function Tickets() {
+const DetalhesEvento = ({ navigation, route }) => {
   return (
-    <View style = {styles.container}>
-        <Text style = {styles.text}> 
-            Pagina Tickets
-        </Text>
+    <View style={styles.container}>
+      <Text style={{ color: '#fff', fontSize: 30 }}>Tickets</Text>
     </View>
-  )
-}
+  );
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#c4c4c4',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  text: {
-    fontSize: 25,
-    fontWeight: 'bold',
-  }
-});
+export default DetalhesEvento;

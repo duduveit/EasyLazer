@@ -1,6 +1,5 @@
 import React from 'react';
 import { Text, View, Button } from 'react-native';
-
 import styles from '../../../style/MainStyle';
 
 export default Home = ({ navigation }) => {
@@ -16,4 +15,3 @@ export default Home = ({ navigation }) => {
     </View>
   );
 };
-

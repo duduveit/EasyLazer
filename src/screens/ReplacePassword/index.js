@@ -6,7 +6,7 @@ import { Button, Icon, Text } from 'react-native-elements';
 import { sendPasswordResetEmail } from 'firebase/auth';
 import { auth } from '../../firebase/firebase.config';
 
-const ReplacePassword = ({ navigation, route }) => {
+const ReplacePassword = ({ navigation }) => {
   const [userEmail, setUserEmail] = useState(null);
 
   function ReplacePassword(){

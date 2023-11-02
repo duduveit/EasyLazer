@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { View, Image, Alert} from 'react-native'; // Importe a tag Image corretamente
 import { Button, Icon, Input, Text } from 'react-native-elements';
-import styles from '../../../style/MainStyle';
 import logo from '../../../assets/icon.png'; // Importe a imagem corretamente
 import { LinearGradient } from 'expo-linear-gradient';
 import { auth } from '../../firebase/firebase.config';
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import style from '../Login/style'
 
 export default function Login({ navigation }) {
   const [userMail, setUserMail] = useState(null);
@@ -40,10 +40,10 @@ export default function Login({ navigation }) {
   }
 
   return (
-    <View style={styles.container}>
-      <Image style={styles.logoInicio} source={logo} />
-      <Text style ={{fontSize: 30, textAlign: 'center', margin: 10, fontWeight: 'bold'}}> Bem-vindo de volta!</Text>
-      <Text style ={{fontSize: 15, textAlign: 'center', margin: 10, color: '#8B8688'}}> Entre com seus dados:</Text>
+    <View style={style.container}>
+      <Image style={style.logoInicio} source={logo} />
+      <Text style ={style.bemVindo}> Bem-vindo de volta!</Text>
+      <Text style ={style.entreDados}> Entre com seus dados:</Text>
       
       <Input
         placeholder="E-mail"
@@ -65,11 +65,7 @@ export default function Login({ navigation }) {
         ViewComponent={LinearGradient}
         buttonStyle={{borderRadius:10}}
         style = {{width:300}}
-        linearGradientProps={{
-          colors: ["#FF6A13", "#F1C400"],
-          start: { x: 0, y: 0.5 },
-          end: { x: 1, y: 0.5 },
-        }}
+        linearGradientProps={style.gradiente}
         icon={
           <Icon
             name="check"
@@ -83,8 +79,8 @@ export default function Login({ navigation }) {
       >
       </Button>
       
-      <Text style ={{fontSize: 16, textAlign: 'center', marginTop: 40, color: '#8B8688'}}> Não possui conta? 
-        <Text style = {{fontSize: 16, textAlign: 'center', marginTop: 40, color: '#FF6A13'}} onPress={() => cadastrar()}> Cadastre </Text>
+      <Text style ={style.textoPossui}> Não possui conta? 
+        <Text style = {style.textoCadastro} onPress={() => cadastrar()}> Cadastre </Text>
       </Text>
     </View>
   );

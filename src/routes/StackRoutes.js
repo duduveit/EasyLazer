@@ -10,6 +10,8 @@ import Ingresso from "../screens/Ingresso";
 import Perfil from "../screens/Perfil";
 import Tickets from "../screens/Tickets";
 import ReplacePassword from "../screens/ReplacePassword"
+import ReplaceName from "../screens/ReplaceName";
+import ReplacePicture from "../screens/ReplacePicture";
 
 
 const Stack = createNativeStackNavigator();
@@ -27,6 +29,8 @@ export default function StackRoutes(){
             <Stack.Screen name="Perfil" component={Perfil} options={{ headerShown: false }}/>
             <Stack.Screen name="Tickets" component={Tickets} options={{ headerShown: false }}/>
             <Stack.Screen name="ReplacePassword" component={ReplacePassword} options={{ headerShown: true, title: "Trocar senha"}}/>
+            <Stack.Screen name="ReplaceName" component={ReplaceName} options={{ headerShown: true, title: "Trocar nome de usuário"}}/>
+            <Stack.Screen name="ReplacePicture" component={ReplacePicture} options={{ headerShown: true, title: "Trocar foto de perfil"}}/>
         </Stack.Navigator>
     )
 }
