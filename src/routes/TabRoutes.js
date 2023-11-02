@@ -5,7 +5,6 @@ import Tickets from '../screens/Tickets';
 import Home from "../screens/Home";
 import Perfil from "../screens/Perfil";
 
-
 import { Entypo, Feather } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();

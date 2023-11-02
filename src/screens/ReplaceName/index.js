@@ -8,7 +8,6 @@ import { getAuth, updateProfile } from "firebase/auth";
 const ReplaceName = ({ navigation }) => {
   const [name, setName] = useState(null);
 
-
   function updateUser(name){
     const auth = getAuth();
     updateProfile(auth.currentUser, {

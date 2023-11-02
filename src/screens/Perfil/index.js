@@ -5,6 +5,7 @@ import { Alert, View } from 'react-native';
 import { Button, Icon, Text, Avatar } from 'react-native-elements';
 import { signOut, updateProfile } from 'firebase/auth';
 import style  from '../Perfil/style'
+import UploadImage from './UploadImage';
 
 export default function Perfil( {navigation} ) {
   const usuario = auth.currentUser;
@@ -34,14 +35,7 @@ export default function Perfil( {navigation} ) {
 
   return (
     <View style={style.container}>
-      <Avatar
-        size={200}
-        title="Eduardo Veit Ferrão"
-        rounded
-        source={{
-          uri: "https://img.freepik.com/premium-vector/man-avatar-profile-picture-vector-illustration_268834-538.jpg"
-        }}
-      />
+      <UploadImage/>
       <View>
         <Text style={style.input}>
           {usuario.displayName}
