@@ -24,7 +24,6 @@ const firebaseConfig = {
   messagingSenderId: MESSAGING_SENDER_ID,
   appId: API_ID
 };
-
 // Initialize Firebase
 export const firebase = initializeApp(firebaseConfig);
 export const auth = initializeAuth(firebase, {

@@ -11,7 +11,6 @@ import Perfil from "../screens/Perfil";
 import Tickets from "../screens/Tickets";
 import ReplacePassword from "../screens/ReplacePassword"
 import ReplaceName from "../screens/ReplaceName";
-import CadastroEvento from "../screens/CadastroEvento";
 
 
 
@@ -31,7 +30,6 @@ export default function StackRoutes(){
             <Stack.Screen name="Tickets" component={Tickets} options={{ headerShown: false }}/>
             <Stack.Screen name="ReplacePassword" component={ReplacePassword} options={{ headerShown: true, title: "Trocar senha"}}/>
             <Stack.Screen name="ReplaceName" component={ReplaceName} options={{ headerShown: true, title: "Trocar nome de usuário"}}/>
-            <Stack.Screen name="CadastroEvento" component={CadastroEvento} options={{ headerShown: true, title: "Cadastrar evento"}}/>
         </Stack.Navigator>
     )
 }

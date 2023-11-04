@@ -10,7 +10,7 @@ export default Home = ({ navigation }) => {
         onPress={() => {
           navigation.navigate('DetalhesEvento');
         }}
-        title="Vá para os detalhes do evento"
+        title="detalhes do evento"
       />
     </View>
   );
