@@ -1,13 +1,21 @@
 import React from 'react';
-import { Text, View} from 'react-native';
-import styles from '../../../style/MainStyle';
+import { Text, View, StyleSheet } from 'react-native';
 
-const DetalhesEvento = ({ navigation, route }) => {
+const Tickets = ({ params }) => {
   return (
     <View style={styles.container}>
-      <Text style={{ color: '#fff', fontSize: 30 }}>Tickets</Text>
+      <Text style={{ color: '#fff', fontSize: 30 }}>Ingresso</Text>
     </View>
   );
 };
 
-export default DetalhesEvento;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#000',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});
+
+export default Tickets;

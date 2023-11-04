@@ -3,11 +3,20 @@ import { StyleSheet } from 'react-native';
 const style = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 20,
+        padding: 10,
         backgroundColor: '#fff',
         justifyContent: 'center',
         alignItems: 'center',
    },
+    containerphoto:{
+        elevation:2,
+        height:200,
+        width:200,
+        backgroundColor:'#efefef',
+        position:'relative',
+        borderRadius:999,
+        overflow:'hidden',
+    },
     input: {
         height: 40, 
         margin: 12, 

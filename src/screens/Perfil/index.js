@@ -5,7 +5,8 @@ import { Alert, View } from 'react-native';
 import { Button, Icon, Text, Avatar } from 'react-native-elements';
 import { signOut, updateProfile } from 'firebase/auth';
 import style  from '../Perfil/style'
-import UploadImage from './UploadImage';
+import UploadImage from '../Perfil/UploadImage';
+
 
 export default function Perfil( {navigation} ) {
   const usuario = auth.currentUser;
@@ -23,6 +24,10 @@ export default function Perfil( {navigation} ) {
 
   function ReplaceName() {
     navigation.navigate('ReplaceName');
+  }
+
+  function CadastroEvento() {
+    navigation.navigate('CadastroEvento');
   }
   
   function logout() {
@@ -59,6 +64,7 @@ export default function Perfil( {navigation} ) {
           buttonStyle={{ borderRadius: 10, height: 56, width: 300}}
           linearGradientProps={style.gradiente}
           title="Cadastrar evento"
+          onPress={CadastroEvento}
         />
       </View>      
       <View style={{ marginTop: 40, flexDirection: 'row', right: -50, top: 30}}>

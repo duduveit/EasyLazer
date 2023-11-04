@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Image, View, Platform, TouchableOpacity, Text, Alert } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
-import style from "../ReplacePicture/style";
+import style from "../Perfil/style";
 import * as ImagePicker from 'expo-image-picker';
 import { getAuth, updateProfile } from "firebase/auth";
 
 export default function UploadImage() {
-  const [image, setImage] = useState(null);
+  const [image, setImage] = useState('');
 
   const auth = getAuth();
   const usuario = auth.currentUser;
@@ -36,7 +36,7 @@ export default function UploadImage() {
   };
   
   return (
-    <View style={style.container}>
+    <View style={style.containerphoto}>
       {usuario.photoURL && <Image source={{ uri: usuario.photoURL }} style={{ width: 200, height: 200 }} />}
       <View style={style.uploadBtnContainer}>
         <TouchableOpacity onPress={pickImage} style={style.uploadBtn} >
