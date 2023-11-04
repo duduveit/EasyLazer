@@ -1,10 +1,14 @@
 import React from 'react';
 import { Text, View, Button } from 'react-native';
-import styles from '../../../style/MainStyle';
+import { Icon, Input } from 'react-native-elements';
+import style from '../Home/style'
 
 export default Home = ({ navigation }) => {
   return (
-    <View style={styles.container}>
+    <View style={style.container}>
+        <Input
+          placeholder="Localização"
+        />
       <Text style={{ color: '#fff', fontSize: 30 }}>Home</Text>
       <Button
         onPress={() => {
