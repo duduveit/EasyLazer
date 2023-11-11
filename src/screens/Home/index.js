@@ -12,9 +12,9 @@ export default Home = ({ navigation }) => {
       <Text style={{ color: '#fff', fontSize: 30 }}>Home</Text>
       <Button
         onPress={() => {
-          navigation.navigate('DetalhesEvento');
+          navigation.navigate('Busca');
         }}
-        title="detalhes do evento"
+        title="Busca"
       />
     </View>
   );

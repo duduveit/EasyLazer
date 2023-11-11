@@ -11,8 +11,7 @@ import Perfil from "../screens/Perfil";
 import Tickets from "../screens/Tickets";
 import ReplacePassword from "../screens/ReplacePassword"
 import ReplaceName from "../screens/ReplaceName";
-
-
+import CadastroEvento from "../screens/CadastroEvento";
 
 const Stack = createNativeStackNavigator();
 
@@ -22,7 +21,7 @@ export default function StackRoutes(){
             <Stack.Screen name="Login" component={Login} options={{ headerShown: false }}/>
             <Stack.Screen name="Inicio" component={TabRoutes} options={{ headerShown: false }}/>
             <Stack.Screen name="Cadastro" component={Cadastro} options={{ headerShown: false }}/>
-            <Stack.Screen name="Busca" component={Busca} options={{ headerShown: false }}/>
+            <Stack.Screen name="Busca" component={Busca} options={{ headerShown: true, title: "Buscar evento" }}/>
             <Stack.Screen name="DetalhesEvento" component={DetalhesEvento} options={{ headerShown: true, title: "Detalhes do evento" }}/>
             <Stack.Screen name="Home" component={Home} options={{ headerShown: false }}/>
             <Stack.Screen name="Ingresso" component={Ingresso} options={{ headerShown: false }}/>
@@ -30,6 +29,7 @@ export default function StackRoutes(){
             <Stack.Screen name="Tickets" component={Tickets} options={{ headerShown: false }}/>
             <Stack.Screen name="ReplacePassword" component={ReplacePassword} options={{ headerShown: true, title: "Trocar senha"}}/>
             <Stack.Screen name="ReplaceName" component={ReplaceName} options={{ headerShown: true, title: "Trocar nome de usuário"}}/>
+            <Stack.Screen name="CadastroEvento" component={CadastroEvento} options={{ headerShown: true, title:"Cadastro de Evento"}}/>
         </Stack.Navigator>
     )
 }
