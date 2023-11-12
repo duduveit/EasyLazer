@@ -1,9 +1,7 @@
 import React from 'react';
 import { Text, View, Image } from 'react-native';
 import style from './style';
-import tardezinha from '../../img/tardezinha.jpg'
 import { Icon, Button } from 'react-native-elements';
-import { LinearGradient } from 'expo-linear-gradient';
 import Caixa from '../../components/caixa';
 
 const DetalhesEvento = ({ navigation, route }) => {

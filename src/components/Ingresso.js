@@ -3,16 +3,19 @@ import { Text, View, StyleSheet, Image } from 'react-native';
 import { Button, Icon } from 'react-native-elements';
 import { LinearGradient } from 'expo-linear-gradient';
 
-export default function Cartao({ navigation, nome, logo, data, hora, curto, organizador, sobre, tipo }) {
+export default function Ingresso({ navigation, nome, logo, data, hora, curto, organizador, sobre, tipo }) {
 
   function Conferir() {
-
-    if (tipo == 'Ingresso') {
-      navigation.navigate('DetalhesEvento', { nome, logo, data, hora, organizador, sobre, tipoBotao: 'Ingresso' });
+    if (tipo === 'Avaliar') {
+      return (
+        navigation.navigate('Avaliar')
+      );
     } else {
-      navigation.navigate('DetalhesEvento', { nome, logo, data, hora, organizador, sobre, tipoBotao: 'Avaliar' });
+      return (
+        navigation.navigate('Ingresso')
+      );
     }
-  }
+  };
 
   return (
     <View style={styles.container}>

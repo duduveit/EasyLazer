@@ -26,19 +26,23 @@ const Search = ({ navigation}) => {
           logo = {tardezinha}
           data = {'13 Dezembro, 2024'}
           hora = {'Sábado, 17:00 - 21:00'}
+          curto = {'Sab, 13 Dez - 17:00 - 21:00'}
           organizador = {'Tardezinha'}
+          tipo = {'Ingresso'}
           sobre = {'Um festival inclusivo e estabelece parcerias com entidades que desenvolvem projetos e que possuem conhecimento técnico nesta área, testando sempre as infraestruturas para um melhor serviço para todos.'}
         />  
       </Card>
       <Card style={style.containerCards2}>
         <Cartao 
           navigation={navigation} 
-          nome ={'Corinthians x Real Madrid'} 
+          nome ={'Corinthians x Palmeiras'} 
           logo = {Corinthians}
           data = {'21 Janeiro, 2024'}
-          hora = {'Domingo, 8:00'}
-          organizador = {'Fifa World Clubs Cup'}
-          sobre = {'Em uma batalha épica nos campos neutros do Mundial de Clubes da FIFA, o Corinthians e o Real Madrid enfrentam-se em uma disputa intensa e emocionante.'}
+          hora = {'Domingo, 16:00'}
+          curto = {'Sab, 21 Jan - 16:00'}
+          organizador = {'Paulistão'}
+          tipo = {'Ingresso'}
+          sobre = {'Acompanhe a final do Paulista'}
         />     
       </Card>
     </View>  
