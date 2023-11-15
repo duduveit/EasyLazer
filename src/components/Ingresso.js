@@ -8,11 +8,11 @@ export default function Ingresso({ navigation, nome, logo, data, hora, curto, or
   function Conferir() {
     if (tipo === 'Avaliar') {
       return (
-        navigation.navigate('Avaliar')
+        navigation.navigate('Avaliar', { nome, logo, data, hora, organizador, sobre, tipoBotao: 'Ingresso' })
       );
     } else {
       return (
-        navigation.navigate('Ingresso')
+        navigation.navigate('Ingresso', { nome, logo, data, hora, organizador, sobre, tipoBotao: 'Ingresso' })
       );
     }
   };

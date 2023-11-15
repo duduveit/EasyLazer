@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
   container: {
     margin: 4,
     flexDirection: 'row',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
   },
   square: {
     width: 100,

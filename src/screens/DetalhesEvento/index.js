@@ -81,10 +81,10 @@ const DetalhesEvento = ({ navigation, route }) => {
         />
         <View>
           <Text style={{fontWeight:'bold', left: 5}}>
-            Neo Química Arena
+            Cidade de São Paulo
           </Text>
           <Text style={{color:'#747688', left:5}}>
-            Estádio do Corinthians
+            São Paulo
           </Text>
         </View>
       </View>

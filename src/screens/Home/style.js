@@ -5,16 +5,16 @@ const style = StyleSheet.create({
       flex: 1,
       padding: 20,
       backgroundColor: '#fff',
-      justifyContent: 'center',
+    },
+    loc: {
+      left: 3,
+      flexDirection: 'row',
       alignItems: 'center',
     },
-    localizacao: {
-      fontSize: 15, 
-      textAlign: 'center', 
-      margin: 10, 
-      color: '#8B8688',
-      right: 100,
-    }
+    containerCards:{
+      alignContent:'center',
+      alignItems:'center',
+    },
 });
 
 export default style

@@ -1,21 +1,45 @@
-import React from 'react';
-import { Text, View, Button } from 'react-native';
-import { Icon, Input } from 'react-native-elements';
-import style from '../Home/style'
+import {React, useState} from 'react';
+import { Text, View, Image, TextInput } from 'react-native';
+import style from './style';
+import { Icon, Button } from 'react-native-elements';
+import Caixa2 from '../../components/caixa2';
 
-export default Home = ({ navigation }) => {
+const Avaliar = ({ navigation, route }) => {
+  const {nome, logo, data, hora, organizador, sobre} =route.params;
+
+  const [value, setValue] = useState('');
+
+
+
   return (
     <View style={style.container}>
-        <Input
-          placeholder="Localização"
-        />
-      <Text style={{ color: '#fff', fontSize: 30 }}>Home</Text>
-      <Button
-        onPress={() => {
-          navigation.navigate('Busca');
-        }}
-        title="Busca"
-      />
+      <Image style={style.imagem} source={logo} />
+      <Text style={style.nome}>
+        {nome}
+      </Text>
+      <Text style={style.title}>
+        Deixe a sua avaliação!
+      </Text>
+
+      <View style={style.sobre}>
+        <TextInput
+          editable
+          multiline
+          numberOfLines={4}
+          maxLength={160}
+          style={style.texto}
+          onChangeText={value => {
+            setValue(value)
+          }
+          }
+          value={value}>
+        </TextInput>
+      </View>
+      <View style={style.botao}>
+        <Caixa2/>
+      </View>
     </View>
   );
 };
+
+export default Avaliar;
