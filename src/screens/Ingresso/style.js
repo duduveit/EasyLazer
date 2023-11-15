@@ -54,6 +54,12 @@ const style = StyleSheet.create({
       top: 60,
       color: '#fff' ,
       fontWeight:'bold'
+    },
+    code: {
+      alignItems:'center', 
+      textAlign: 'center',
+      justifyContent: 'center', 
+      top: 90, 
     }
 });
 
