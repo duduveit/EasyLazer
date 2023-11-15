@@ -12,7 +12,7 @@ export default function Ingresso({ navigation, nome, logo, data, hora, curto, or
       );
     } else {
       return (
-        navigation.navigate('Ingresso', { nome, logo, data, hora, organizador, sobre, tipoBotao: 'Ingresso' })
+        navigation.navigate('Ingresso', { nome, logo, data, hora, curto, organizador, sobre, tipoBotao: 'Ingresso' })
       );
     }
   };
